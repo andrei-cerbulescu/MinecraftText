@@ -11,6 +11,11 @@ private:
 
 
 public:
+	
+	Item* getCurentItem() {
+		return(this->curentItem);
+	}
+
 	bool isEmpty() {
 		if (this->quantity == 0) return(true);
 		return(false);
@@ -28,6 +33,10 @@ public:
 
 	}
 
+	void removeQuantity(int removedQuantity) {
+		this->quantity = this->quantity - removedQuantity;
+	}
+
 	void setItemType(Item *itemType) {
 
 		this->curentItem = itemType;
@@ -36,6 +45,18 @@ public:
 
 	void emptyQuantity() {
 		this->quantity = 0;
+	}
+
+	void emptyThis() {
+		this->quantity = 0;
+	}
+
+	int getQuantity() {
+		return(this->quantity);
+	}
+
+	int getStackSize() {
+		return(this->curentItem->getStackSize());
 	}
 
 	void stdPrintThisData() {

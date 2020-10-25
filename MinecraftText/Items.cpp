@@ -23,8 +23,7 @@ Nothing::Nothing() {
 Stone::Stone() {
 	this->stackSize = 64;
 	strcpy_s(this->name, "Stone");
-	this->isBreakable = false;
-	this->durability = -1;
+
 }
 
 Sword::Sword() {
@@ -32,6 +31,13 @@ Sword::Sword() {
 	this->stackSize = 1;
 	strcpy_s(this->name, "Sword");
 	this->isBreakable = true;
-	this->durability = -1;
+	this->durability = 128;
+
+}
+
+Iron::Iron() {
+
+	this->stackSize = 64;
+	strcpy_s(this->name, "Iron");
 
 }

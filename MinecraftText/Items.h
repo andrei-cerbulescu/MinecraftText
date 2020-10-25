@@ -13,11 +13,11 @@ protected:
 	int durability;
 	bool isEdible;
 	int saturation;
+	char name[50];
 
 public:
 	Item();
-	char name[50];
-
+	
 	bool isDepleted() {
 
 		if (isBreakable == true && durability <= 0) {
@@ -34,6 +34,10 @@ public:
 		return(this->name);
 	}
 
+	int getStackSize() {
+		return(this->stackSize);
+	}
+
 };
 
 class Nothing : public Item {
@@ -41,6 +45,7 @@ class Nothing : public Item {
 private:
 
 public:
+
 	Nothing();
 
 };
@@ -51,6 +56,14 @@ private:
 
 public:
 	Stone();
+
+};
+
+class Iron : public Item {
+private:
+
+public:
+	Iron();
 
 };
 

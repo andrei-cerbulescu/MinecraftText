@@ -16,10 +16,12 @@ void mineFunction(Player* player1) {
 	ironMined = rand() % 8 + 1;
 
 	InventorySlot *curentSlot = player1->inventorySpace->getFirstEmptySlot();
-	
-	curentSlot->setItemType(new Stone());
-	curentSlot->emptyQuantity();
-	curentSlot->addQuantity(stoneMined);
 
+	InventorySlot *tempStone = new InventorySlot();
+	tempStone->emptyQuantity();
+	tempStone->setItemType(new Stone());
+	tempStone->addQuantity(stoneMined);
+
+	player1->inventorySpace->addItemsToExisting(tempStone);
 
 }
