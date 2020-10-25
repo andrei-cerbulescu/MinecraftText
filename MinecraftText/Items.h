@@ -1,7 +1,7 @@
 #include <string.h>
 #include <iostream>
 
-class item {
+class Item {
 
 protected:
 	int stackSize;
@@ -24,7 +24,7 @@ public:
 
 };
 
-class Stone : item {
+class Stone : Item {
 
 private:
 
@@ -40,7 +40,7 @@ public:
 
 };
 
-class Sword : item {
+class Sword : Item {
 
 private:
 

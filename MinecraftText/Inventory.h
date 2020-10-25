@@ -1,13 +1,27 @@
 #pragma once
-class InventorySlot
+#include "InventorySlot.h"
+#include <iostream>
+#include <vector>
+
+class Inventory
 {
-private:
-	int quantity;
+protected:
+	
+		std::vector<InventorySlot*> InventorySpace;
+	
 
 public:
-	bool isEmpty() {
-		if (this->quantity == 0) return(true);
-		return(false);
+
+	Inventory();
+
+	bool isFull() {
+
+		for (int i = 0; i < 20; i++) {
+			if (InventorySpace.at(i)->isEmpty() == true) return(false);
+		}
+		
+		return(true);
 	}
+
 };
 

@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="InventorySlot.cpp" />
     <ClCompile Include="Items.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -147,7 +148,9 @@
   <ItemGroup>
     <ClInclude Include="decission.h" />
     <ClInclude Include="Inventory.h" />
+    <ClInclude Include="InventorySlot.h" />
     <ClInclude Include="Items.h" />
+    <ClInclude Include="mine.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

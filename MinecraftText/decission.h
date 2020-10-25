@@ -9,7 +9,7 @@ void decissionFunction(Player *player1) {
 
 	std::cin >> decission;
 
-	if (player1->isInventoryFull() == true) {
+	if (player1->inventorySpace->isFull() == true) {
 		std::cout << "Invetory is full!\n";
 		decissionFunction(player1);
 	}
