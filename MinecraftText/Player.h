@@ -9,7 +9,7 @@ private:
 	int hp;
 
 public:
-	Inventory* inventorySpace;
+	Inventory *inventorySpace;
 
 	Player();
 

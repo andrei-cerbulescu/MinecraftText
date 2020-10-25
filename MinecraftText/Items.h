@@ -1,15 +1,23 @@
 #include <string.h>
 #include <iostream>
 
+#ifndef AAA_HEADER
+#define AAA_HEADER
+//^Inteleg de ce dar totusi simt nevoia sa intreb: de ce??
+
 class Item {
 
 protected:
 	int stackSize;
-	char name[50];
 	bool isBreakable;
 	int durability;
+	bool isEdible;
+	int saturation;
 
 public:
+	Item();
+	char name[50];
+
 	bool isDepleted() {
 
 		if (isBreakable == true && durability <= 0) {
@@ -22,35 +30,36 @@ public:
 
 	}
 
-};
-
-class Stone : Item {
-
-private:
-
-public:
-	Stone() {
-
-		this->stackSize = 64;
-		strcpy_s(this->name, "Stone");
-		this->isBreakable = false;
-		this->durability = -1;
-
+	char *getItemName(){
+		return(this->name);
 	}
 
 };
 
-class Sword : Item {
+class Nothing : public Item {
 
 private:
 
 public:
-	Sword() {
+	Nothing();
 
-		this->stackSize = 1;
-		strcpy_s(this->name, "Sword");
-		this->isBreakable = true;
-		this->durability = -1;
-
-	}
 };
+
+class Stone : public Item {
+
+private:
+
+public:
+	Stone();
+
+};
+
+class Sword : public Item {
+
+private:
+
+public:
+	Sword();
+};
+
+#endif
