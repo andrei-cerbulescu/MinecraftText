@@ -60,10 +60,10 @@ public:
 
 					int maxAdded = toBeAdded->getCurentItem()->getStackSize() - this->InventorySpace.at(i)->getQuantity();
 
-					if (maxAdded+ toBeAdded->getQuantity() > toBeAdded->getCurentItem()->getStackSize())  {
+					if (toBeAdded->getQuantity() +this->InventorySpace.at(i)->getQuantity() > toBeAdded->getCurentItem()->getStackSize()) {
 						this->InventorySpace.at(i)->addQuantity(maxAdded);
 						toBeAdded->removeQuantity(maxAdded);
-						this->addItemsToNewSlot(toBeAdded);
+						this->setFirstEmptySlot(toBeAdded);
 						return;
 					}
 
@@ -85,6 +85,7 @@ public:
 		for (int i = 0; i < 20; i++) {
 
 			if (this->InventorySpace.at(i)->isEmpty()) {
+				delete this->InventorySpace.at(i);
 				this->InventorySpace.at(i) = toBeAdded;
 				return;
 			}

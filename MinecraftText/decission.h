@@ -27,6 +27,8 @@ void decissionFunction(Player *player1) {
 		std::cout << "You died!\n";
 	}
 
+	std::cout << "-------------------\n";
+
 	decissionFunction(player1);
 
 }

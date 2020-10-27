@@ -1,8 +1,8 @@
 #include <string.h>
 #include <iostream>
 
-#ifndef AAA_HEADER
-#define AAA_HEADER
+#ifndef ITEM_HEADER
+#define ITEM_HEADER
 //^Inteleg de ce dar totusi simt nevoia sa intreb: de ce??
 
 class Item {

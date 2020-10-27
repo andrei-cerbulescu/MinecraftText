@@ -39,6 +39,7 @@ public:
 
 	void setItemType(Item *itemType) {
 
+		delete this->curentItem;
 		this->curentItem = itemType;
 
 	}
