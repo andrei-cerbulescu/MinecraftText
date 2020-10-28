@@ -1,7 +1,7 @@
 #include <iostream>
 #include "./Player.h"
 #include "./mine.h"
-
+#include <stdlib.h>
 
 void decissionFunction(Player *player1) {
 
@@ -9,6 +9,7 @@ void decissionFunction(Player *player1) {
 	int decission;
 
 	std::cin >> decission;
+	system("cls");
 
 	if (decission == 1) {
 		mineFunction(player1);
@@ -27,7 +28,7 @@ void decissionFunction(Player *player1) {
 		std::cout << "You died!\n";
 	}
 
-	std::cout << "-------------------\n";
+	//std::cout << "-------------------\n";
 
 	decissionFunction(player1);
 
