@@ -24,4 +24,11 @@ void mineFunction(Player* player1) {
 
 	player1->inventorySpace->addItemsToExisting(tempStone);
 
+	InventorySlot* tempIron = new InventorySlot();
+	tempIron->emptyQuantity();
+	tempIron->setItemType(new Iron());
+	tempIron->addQuantity(ironMined);
+
+	player1->inventorySpace->addItemsToExisting(tempIron);
+
 }
