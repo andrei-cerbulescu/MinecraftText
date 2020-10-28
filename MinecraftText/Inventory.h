@@ -39,10 +39,10 @@ public:
 
 	}
 
-	InventorySlot *findItemByName(char itemName[50]) {
+	InventorySlot *findItemByName(std::string itemName) {
 
 		for (int i = 0; i < 20; i++) {
-			if (strcmp(itemName, this->InventorySpace.at(i)->getItemName())==0) {
+			if (this->InventorySpace.at(i)->getItemName().compare(itemName)==0) {
 				return(this->InventorySpace.at(i));
 			}
 		}
@@ -55,7 +55,7 @@ public:
 
 		for (int i = 0; i < 20; i++) {
 
-			if (strcmp(this->InventorySpace.at(i)->getItemName(), toBeAdded->getCurentItem()->getItemName()) == 0) {
+			if (this->InventorySpace.at(i)->getItemName().compare(toBeAdded->getCurentItem()->getItemName())== 0) {
 				if (this->InventorySpace.at(i)->getQuantity() < this->InventorySpace.at(i)->getStackSize()) {
 
 					int maxAdded = toBeAdded->getCurentItem()->getStackSize() - this->InventorySpace.at(i)->getQuantity();

@@ -1,4 +1,4 @@
-#include <string.h>
+#include <string>
 #include <iostream>
 
 #ifndef ITEM_HEADER
@@ -13,7 +13,7 @@ protected:
 	int durability;
 	bool isEdible;
 	int saturation;
-	char name[50];
+	std::string name;
 
 public:
 	Item();
@@ -30,7 +30,7 @@ public:
 
 	}
 
-	char *getItemName(){
+	std::string getItemName(){
 		return(this->name);
 	}
 

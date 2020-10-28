@@ -21,7 +21,7 @@ public:
 		return(false);
 	}
 
-	char *getItemName(){
+	std::string getItemName(){
 
 		return(this->curentItem->getItemName());
 
