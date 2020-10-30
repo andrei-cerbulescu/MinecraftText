@@ -146,7 +146,7 @@
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="decission.h" />
+    <ClInclude Include="decision.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="InventorySlot.h" />
     <ClInclude Include="Items.h" />

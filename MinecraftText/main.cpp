@@ -1,11 +1,11 @@
 #include <iostream>
 #include "./Player.h"
-#include "decission.h"
+#include "decision.h"
 
 int main()
 {
     Player *player1 = new Player();
-    decissionFunction(player1);
+    decisionFunction(player1);
 
     return 0;
 }
