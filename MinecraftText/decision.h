@@ -1,6 +1,7 @@
 #include <iostream>
 #include "./Player.h"
 #include "./mine.h"
+#include "Fight/Fight.h"
 #include <stdlib.h>
 
 void decisionFunction(Player *player1) {

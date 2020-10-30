@@ -37,6 +37,8 @@ public:
 			}
 		}
 
+		return nullptr;
+
 	}
 
 	InventorySlot *findItemByName(std::string itemName) {
