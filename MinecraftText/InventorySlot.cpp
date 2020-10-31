@@ -2,6 +2,6 @@
 
 InventorySlot::~InventorySlot() {
 
-	this->emptyQuantity();
+	delete this->curentItem;
 
 }
