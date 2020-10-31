@@ -11,6 +11,8 @@ private:
 
 
 public:
+
+	~InventorySlot();
 	
 	Item* getCurentItem() {
 		return(this->curentItem);
@@ -45,10 +47,6 @@ public:
 	}
 
 	void emptyQuantity() {
-		this->quantity = 0;
-	}
-
-	void emptyThis() {
 		this->quantity = 0;
 	}
 

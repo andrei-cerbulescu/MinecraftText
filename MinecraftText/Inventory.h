@@ -96,15 +96,6 @@ public:
 
 	}
 
-	void addItemsToNewSlot(InventorySlot* toBeAdded) {
-
-		//InventorySlot* firstEmpty = this->getFirstEmptySlot();
-		//firstEmpty = toBeAdded;
-
-		//this->getFirstEmptySlot() = toBeAdded;
-
-	}
-
 	void displayInventory() {
 
 		std::cout << "You are currently carrying:\n";

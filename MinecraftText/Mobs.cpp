@@ -8,7 +8,8 @@ Zombie::Zombie() {
 }
 
 Mobs::Mobs() {
-
+	this->hp = 0;
+	this->damage = 0;
 }
 
 Mobs::Mobs(const Mobs &toBeCopied) {
