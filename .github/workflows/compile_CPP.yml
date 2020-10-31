@@ -9,11 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-        defaults:
-          run:
-            shell: bash
-            working-directory: MinecraftText
-
+    defaults:
+      run:
+        working-directory: MinecraftText
+        shell: bash
     steps:
     - uses: actions/checkout@v2
     - name: dependencies
