@@ -1,9 +1,7 @@
+#pragma once
 #include <string>
 #include <iostream>
 
-#ifndef ITEM_HEADER
-#define ITEM_HEADER
-//^Inteleg de ce dar totusi simt nevoia sa intreb: de ce??
 
 class Item {
 
@@ -74,5 +72,3 @@ private:
 public:
 	Sword();
 };
-
-#endif

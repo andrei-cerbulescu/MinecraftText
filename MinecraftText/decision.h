@@ -30,7 +30,6 @@ void decisionFunction(Player *player1) {
 
 		if (player1->inventorySpace->isFull() == true) {
 			std::cout << "Invetory is full!\n";
-			decisionFunction(player1);
 		}
 
 		if (player1->isDead() == true) {

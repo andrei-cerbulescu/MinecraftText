@@ -9,14 +9,19 @@ class Inventory
 protected:
 	
 		std::vector<InventorySlot*> InventorySpace;
+		const int inventorySize = 20;
 
 public:
 
 	Inventory();
 
+	int getInventorySize() {
+		return(this->inventorySize);
+	}
+
 	bool isFull() {
 
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < this->inventorySize; i++) {
 			if (this->InventorySpace.at(i)->isEmpty() == true) return(false);
 		}
 		
@@ -31,7 +36,7 @@ public:
 		}
 
 
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < this->getInventorySize(); i++) {
 			if (InventorySpace.at(i)->isEmpty() == true) {
 				return(InventorySpace.at(i));
 			}
@@ -100,7 +105,7 @@ public:
 
 		std::cout << "You are currently carrying:\n";
 
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < this->getInventorySize(); i++) {
 			this->InventorySpace.at(i)->stdPrintThisData();
 		}
 
