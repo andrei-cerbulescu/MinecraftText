@@ -6,9 +6,11 @@
 
 void decisionFunction(Player *player1) {
 
-	while (true) {
+	bool stillPlaying = true;
 
-		std::cout << "1.Mine \n2.Fight Mobs \n3.Craft \n4.See Inventory\n";
+	while (stillPlaying == true) {
+
+		std::cout << "1.Mine \n2.Fight Mobs \n3.Craft \n4.See Inventory\n9.Exit\n";
 
 		int decision;
 		std::cin >> decision;
@@ -23,21 +25,26 @@ void decisionFunction(Player *player1) {
 				player1->inventorySpace->displayInventory();
 				break;
 
+			case 9:
+				player1->endGame();
+				stillPlaying = false;
+				break;
+
 			default:
 				std::cout << "Unknown command!\n";
 		}
 
+		if (stillPlaying == true) {
+			if (player1->inventorySpace->isFull() == true) {
+				std::cout << "Invetory is full!\n";
+			}
 
-		if (player1->inventorySpace->isFull() == true) {
-			std::cout << "Invetory is full!\n";
+			if (player1->isDead() == true) {
+				std::cout << "You died!\n";
+			}
+
+			std::cout << "\n";
 		}
-
-		if (player1->isDead() == true) {
-			std::cout << "You died!\n";
-		}
-
-		std::cout << "\n";
-
 	}
 
 }

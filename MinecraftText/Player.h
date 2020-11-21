@@ -17,5 +17,11 @@ public:
 		if (this->hp <= 0) return(true);
 		return(false);
 	}
+
+	void endGame() {
+		this->inventorySpace->freeEverything();
+		delete this->inventorySpace;
+		delete this;
+	}
 };
 

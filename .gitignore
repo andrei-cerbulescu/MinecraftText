@@ -130,6 +130,13 @@ StyleCopReport.xml
 *.svclog
 *.scc
 
+### Gcov ###
+# gcc coverage testing tool files
+
+*.gcno
+*.gcda
+*.gcov
+
 # Chutzpah Test files
 _Chutzpah*
 

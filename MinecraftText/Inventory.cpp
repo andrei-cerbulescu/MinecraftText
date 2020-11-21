@@ -7,8 +7,8 @@ Inventory::Inventory() {
 
 	for (int i = 0; i < this->getInventorySize(); i++) {
 
-		InventorySpace.push_back(new InventorySlot());
-		InventorySpace.at(i)->setItemType(new Nothing());
+		inventorySpace.push_back(new InventorySlot());
+		inventorySpace.at(i)->setItemType(new Nothing());
 
 	}
 

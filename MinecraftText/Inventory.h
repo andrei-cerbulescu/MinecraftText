@@ -8,7 +8,7 @@ class Inventory
 {
 protected:
 	
-		std::vector<InventorySlot*> InventorySpace;
+		std::vector<InventorySlot*> inventorySpace;
 		const int inventorySize = 20;
 
 public:
@@ -22,7 +22,7 @@ public:
 	bool isFull() {
 
 		for (int i = 0; i < this->inventorySize; i++) {
-			if (this->InventorySpace.at(i)->isEmpty() == true) return(false);
+			if (this->inventorySpace.at(i)->isEmpty() == true) return(false);
 		}
 		
 		return(true);
@@ -37,8 +37,8 @@ public:
 
 
 		for (int i = 0; i < this->getInventorySize(); i++) {
-			if (InventorySpace.at(i)->isEmpty() == true) {
-				return(InventorySpace.at(i));
+			if (inventorySpace.at(i)->isEmpty() == true) {
+				return(inventorySpace.at(i));
 			}
 		}
 
@@ -48,9 +48,9 @@ public:
 
 	InventorySlot *findItemByName(std::string itemName) {
 
-		for (int i = 0; i < 20; i++) {
-			if (this->InventorySpace.at(i)->getItemName().compare(itemName)==0) {
-				return(this->InventorySpace.at(i));
+		for (int i = 0; i < this->getInventorySize(); i++) {
+			if (this->inventorySpace.at(i)->getItemName().compare(itemName)==0) {
+				return(this->inventorySpace.at(i));
 			}
 		}
 
@@ -60,21 +60,21 @@ public:
 
 	void addItemsToExisting(InventorySlot* toBeAdded) {
 
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < this->getInventorySize(); i++) {
 
-			if (this->InventorySpace.at(i)->getItemName().compare(toBeAdded->getCurentItem()->getItemName())== 0) {
-				if (this->InventorySpace.at(i)->getQuantity() < this->InventorySpace.at(i)->getStackSize()) {
+			if (this->inventorySpace.at(i)->getItemName().compare(toBeAdded->getCurentItem()->getItemName())== 0) {
+				if (this->inventorySpace.at(i)->getQuantity() < this->inventorySpace.at(i)->getStackSize()) {
 
-					int maxAdded = toBeAdded->getCurentItem()->getStackSize() - this->InventorySpace.at(i)->getQuantity();
+					int maxAdded = toBeAdded->getCurentItem()->getStackSize() - this->inventorySpace.at(i)->getQuantity();
 
-					if (toBeAdded->getQuantity() +this->InventorySpace.at(i)->getQuantity() > toBeAdded->getCurentItem()->getStackSize()) {
-						this->InventorySpace.at(i)->addQuantity(maxAdded);
+					if (toBeAdded->getQuantity() +this->inventorySpace.at(i)->getQuantity() > toBeAdded->getCurentItem()->getStackSize()) {
+						this->inventorySpace.at(i)->addQuantity(maxAdded);
 						toBeAdded->removeQuantity(maxAdded);
 						this->setFirstEmptySlot(toBeAdded);
 						return;
 					}
 
-					this->InventorySpace.at(i)->addQuantity(toBeAdded->getQuantity());
+					this->inventorySpace.at(i)->addQuantity(toBeAdded->getQuantity());
 					delete toBeAdded;
 					return;
 
@@ -89,11 +89,11 @@ public:
 
 	void setFirstEmptySlot(InventorySlot* toBeAdded) {
 
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < this->getInventorySize(); i++) {
 
-			if (this->InventorySpace.at(i)->isEmpty()) {
-				delete this->InventorySpace.at(i);
-				this->InventorySpace.at(i) = toBeAdded;
+			if (this->inventorySpace.at(i)->isEmpty()) {
+				delete this->inventorySpace.at(i);
+				this->inventorySpace.at(i) = toBeAdded;
 				return;
 			}
 
@@ -106,12 +106,20 @@ public:
 		std::cout << "You are currently carrying:\n";
 
 		for (int i = 0; i < this->getInventorySize(); i++) {
-			this->InventorySpace.at(i)->stdPrintThisData();
+			this->inventorySpace.at(i)->stdPrintThisData();
 		}
 
 	}
 
+	void freeEverything() {
 
+		for (int i = 0; i < this->getInventorySize(); i++) {
+
+			delete this->inventorySpace.at(i);
+
+		}
+
+	}
 
 };
 

@@ -13,10 +13,7 @@ Item::Item() {
 
 Nothing::Nothing() {
 
-	this->stackSize = 0;
 	this->name = "Nothing";
-	this->isBreakable = false;
-	this->durability = -1;
 
 }
 
