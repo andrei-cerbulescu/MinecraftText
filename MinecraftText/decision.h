@@ -7,6 +7,7 @@
 void decisionFunction(Player *player1) {
 
 	bool stillPlaying = true;
+	Fight* curentFight;
 
 	while (stillPlaying == true) {
 
@@ -19,6 +20,11 @@ void decisionFunction(Player *player1) {
 
 			case 1:
 				mineFunction(player1);
+				break;
+
+			case 2:
+				curentFight = new Fight(player1);
+				curentFight->fightFunction();
 				break;
 
 			case 4:

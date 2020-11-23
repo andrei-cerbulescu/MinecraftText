@@ -7,6 +7,8 @@ class Player
 {
 private:
 	int hp;
+	int baseDamage;
+	int damageModifier;
 
 public:
 	Inventory *inventorySpace;
@@ -22,6 +24,10 @@ public:
 		this->inventorySpace->freeEverything();
 		delete this->inventorySpace;
 		delete this;
+	}
+
+	int getDamage() {
+		return(this->baseDamage + this->damageModifier);
 	}
 };
 

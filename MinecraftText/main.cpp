@@ -4,6 +4,8 @@
 
 int main()
 {
+    srand((unsigned int)time(NULL));
+
     Player *player1 = new Player();
     decisionFunction(player1);
 

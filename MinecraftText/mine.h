@@ -8,8 +8,6 @@
 
 void mineFunction(Player* player1) {
 
-	srand((unsigned int)time(NULL));
-
 	int stoneMined, ironMined;
 
 	stoneMined = rand() % 32 + 1;
