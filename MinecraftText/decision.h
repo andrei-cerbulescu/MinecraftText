@@ -25,6 +25,7 @@ void decisionFunction(Player *player1) {
 			case 2:
 				curentFight = new Fight(player1);
 				curentFight->fightFunction();
+				delete curentFight;
 				break;
 
 			case 4:

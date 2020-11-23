@@ -33,7 +33,7 @@ public:
 	void printMobsWithHP() {
 		for (unsigned int i = 0; i < this->fightMobsVector.size(); i++) {
 
-			std::cout << i + 1 << ". " << this->fightMobsVector.at(i)->getName() << " has " << this->fightMobsVector.at(i)->getHealth() << "HP\n";
+			std::cout << i + 1 << "." << this->fightMobsVector.at(i)->getName() << " has " << this->fightMobsVector.at(i)->getHealth() << "HP\n";
 
 		}
 	}
@@ -78,7 +78,7 @@ public:
 
 	void hitFunction() {
 
-		std::cout << "Which mob do you want to hit?";
+		std::cout << "Which mob do you want to hit?\n";
 
 		unsigned int numberOfMob;
 
