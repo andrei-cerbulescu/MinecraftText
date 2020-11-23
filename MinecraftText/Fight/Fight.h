@@ -97,6 +97,12 @@ public:
 
 		}
 
+		this->fightMobsVector.at(numberOfMob - 1)->takeDamage(this->fightPlayer->getDamage());
+		if (this->fightMobsVector.at(numberOfMob - 1)->getHealth() <= 0) {
+			delete this->fightMobsVector.at(numberOfMob - 1);
+			this->fightMobsVector.erase(this->fightMobsVector.begin() + numberOfMob - 1);
+		}
+
 	}
 
 	void eatFunction() {

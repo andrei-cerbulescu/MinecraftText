@@ -27,6 +27,10 @@ public:
 		return this->name;
 	}
 
+	void takeDamage(int damage) {
+		this->hp = this->hp - damage;
+	}
+
 	void run() {
 		if (this->hp <= 5) {
 
