@@ -106,7 +106,7 @@ public:
 		std::cout << "You are currently carrying:\n";
 
 		for (int i = 0; i < this->getInventorySize(); i++) {
-			this->inventorySpace.at(i)->stdPrintThisData();
+			std::cout<<this->inventorySpace.at(i)<<"\n";
 		}
 
 	}

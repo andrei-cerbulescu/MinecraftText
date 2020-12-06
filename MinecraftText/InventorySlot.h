@@ -13,6 +13,12 @@ private:
 public:
 
 	~InventorySlot();
+
+	friend std::ostream &operator<<(std::ostream& curentOstream, InventorySlot* curentObject) {	
+		curentOstream << curentObject->quantity<<" "<< curentObject->getItemName();
+
+		return curentOstream;
+	}
 	
 	Item* getCurentItem() {
 		return(this->curentItem);

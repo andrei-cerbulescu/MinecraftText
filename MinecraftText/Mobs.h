@@ -5,8 +5,8 @@ class Mobs
 {
 protected:
 	int hp, damage;
-	bool diesOnAttack = false, isRanged = false;
-	std::string name = "Nothing";
+	bool diesOnAttack, isRanged;
+	std::string name;
 
 public:
 
