@@ -1,7 +1,7 @@
 #pragma once
 #include "Player.h"
 #include <time.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include <iostream>
 #include "InventorySlot.h"
 #include "Items.h"

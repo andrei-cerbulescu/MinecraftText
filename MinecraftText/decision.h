@@ -2,7 +2,7 @@
 #include "./Player.h"
 #include "./mine.h"
 #include "Fight/Fight.h"
-#include <stdlib.h>
+#include <cstdlib>
 
 void decisionFunction(Player *player1) {
 
