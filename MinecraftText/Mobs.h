@@ -14,6 +14,17 @@ public:
 
 	Mobs(const Mobs& toBeCopied);
 
+	Mobs& operator=(const Mobs& mob) {
+
+		hp = mob.hp;
+		damage = mob.damage;
+		diesOnAttack = mob.diesOnAttack;
+		isRanged = mob.isRanged;
+		name = mob.name;
+		return *this;
+
+	}
+
 	bool isDead() {
 		if (hp <= 0) return true;
 		return false;
