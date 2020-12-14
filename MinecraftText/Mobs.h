@@ -45,12 +45,9 @@ public:
 	}
 
 	void takeDamage(int damage) {
-		try {
+
 			this->hp = this->hp - damage;
-		}
-		catch (int err) {
-			std::cout << "Oh no! This mob was supposed take damage but instead hit you with error number " << err<<'\n';
-		}
+
 	}
 
 	void run() {

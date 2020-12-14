@@ -56,25 +56,39 @@ public:
 		int decission;
 		std::cin >> decission;
 
-		switch (decission) {
-		case 1:
-			this->hitFunction();
-			break;
+		try {
 
-		case 2:
-			this->eatFunction();
-			break;
+			if (fightPlayer->isDead() == true) {
+				throw 21;
+			}
 
-		case 3:
-			this->runFunction();
-			break;
+			switch (decission) {
+			case 1:
+				this->hitFunction();
+				break;
 
-		default:
-			std::cout << "Invalid Input";
-			break;
+			case 2:
+				this->eatFunction();
+				break;
+
+			case 3:
+				this->runFunction();
+				break;
+
+			default:
+				std::cout << "Invalid Input";
+				break;
+
+			}
+		}
+			
+		catch (int excep) {
+			
+			std::cout << "Oh no! You tried to do something but ran into exception " << excep << '\n';
 
 		}
-	}
+
+		}
 
 	void hitFunction() {
 
