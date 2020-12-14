@@ -28,5 +28,9 @@ public:
 	int getDamage() {
 		return(this->baseDamage + this->damageModifier);
 	}
+
+	void takeDamage(int damage) {
+		this->hp = this->hp - damage;
+	}
 };
 

@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <iostream>
+#include "./Player.h"
 
 class Mobs
 {
@@ -13,6 +15,10 @@ public:
 	Mobs();
 
 	Mobs(const Mobs& toBeCopied);
+
+	virtual void attack(Player* curentPlayer) {
+
+	}
 
 	Mobs& operator=(const Mobs& mob) {
 
@@ -39,7 +45,12 @@ public:
 	}
 
 	void takeDamage(int damage) {
-		this->hp = this->hp - damage;
+		try {
+			this->hp = this->hp - damage;
+		}
+		catch (int err) {
+			std::cout << "Oh no! This mob was supposed take damage but instead hit you with error number " << err<<'\n';
+		}
 	}
 
 	void run() {
@@ -54,6 +65,12 @@ class Zombie : public Mobs {
 
 public:
 
+	void attack(Player* curentPlayer) {
+
+		curentPlayer->takeDamage(this->damage);
+
+	}
+
 	Zombie();
 
 };
@@ -61,6 +78,12 @@ public:
 class Creeper : public Mobs {
 
 public:
+
+	void attack(Player* curentPlayer) {
+
+		curentPlayer->takeDamage(this->damage);
+		this->takeDamage(this->hp);
+	}
 
 	Creeper();
 
