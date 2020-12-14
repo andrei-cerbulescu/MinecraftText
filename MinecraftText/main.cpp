@@ -8,6 +8,7 @@ int main()
 
     Player *player1 = new Player();
     decisionFunction(player1);
+    delete player1;
 
     return 0;
 }

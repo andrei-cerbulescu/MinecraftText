@@ -23,7 +23,6 @@ public:
 	void endGame() {
 		this->inventorySpace->freeEverything();
 		delete this->inventorySpace;
-		delete this;
 	}
 
 	int getDamage() {
