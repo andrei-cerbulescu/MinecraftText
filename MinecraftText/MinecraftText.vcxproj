@@ -148,6 +148,7 @@
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Crafting.h" />
     <ClInclude Include="decision.h" />
     <ClInclude Include="Fight\Fight.h" />
     <ClInclude Include="Inventory.h" />

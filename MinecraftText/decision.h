@@ -1,6 +1,7 @@
 #include <iostream>
 #include "./Player.h"
 #include "./mine.h"
+#include "./Crafting.h"
 #include "Fight/Fight.h"
 #include <cstdlib>
 
@@ -26,6 +27,10 @@ void decisionFunction(Player *player1) {
 				curentFight = new Fight(player1);
 				curentFight->fightFunction();
 				delete curentFight;
+				break;
+
+			case 3:
+				CraftFunction(player1);
 				break;
 
 			case 4:

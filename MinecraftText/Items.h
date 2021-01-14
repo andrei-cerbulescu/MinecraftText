@@ -72,3 +72,11 @@ private:
 public:
 	Sword();
 };
+
+
+class Wood : public Item {
+private:
+
+public:
+	Wood();
+};

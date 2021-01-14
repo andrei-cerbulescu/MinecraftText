@@ -38,3 +38,8 @@ Iron::Iron() {
 	this->name = "Iron";
 
 }
+
+Wood::Wood() {
+	this->stackSize = 64;
+	this->name = "Wood";
+}

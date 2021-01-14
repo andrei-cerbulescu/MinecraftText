@@ -121,5 +121,49 @@ public:
 
 	}
 
+	int countSpecificItem(std::string toBeFound) {
+		int counter = 0;
+		for (int i = 0; i < this->getInventorySize(); i++) {
+			if (this->inventorySpace.at(i)->getCurentItem()->getItemName() == toBeFound) {
+
+				counter += this->inventorySpace.at(i)->getQuantity();
+
+			}
+		}
+
+		return counter;
+
+	}
+
+	void removeSpecific(std::string toBeFound, int quantity) {
+
+		for (int i = this->getInventorySize()-1; i >= 0; i--) {
+
+			if (quantity == 0) {
+				break;
+			}
+
+			if (this->inventorySpace.at(i)->getCurentItem()->getItemName() == toBeFound) {
+
+				if(quantity <= this->inventorySpace.at(i)->getQuantity()){
+				
+					this->inventorySpace.at(i)->removeQuantity(quantity);
+					break;
+				
+				}
+
+				if (quantity > this->inventorySpace.at(i)->getQuantity()) {
+					
+					quantity = quantity - this->inventorySpace.at(i)->getQuantity();
+					this->inventorySpace.at(i)->emptyQuantity();
+
+				}
+
+			}
+
+		}
+
+	}
+
 };
 
