@@ -1,6 +1,7 @@
 #include <iostream>
 #include "./Player.h"
 #include "decision.h"
+#include "FightLogger.h"
 
 int main()
 {
@@ -9,6 +10,7 @@ int main()
     Player *player1 = new Player();
     decisionFunction(player1);
     delete player1;
+    delete FightLogger::getInstance();
 
     return 0;
 }

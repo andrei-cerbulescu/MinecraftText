@@ -45,6 +45,9 @@
     <ClInclude Include="Crafting.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FightLogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -67,6 +70,9 @@
     </ClCompile>
     <ClCompile Include="Fight\Fight.cpp">
       <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="FightLogger.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

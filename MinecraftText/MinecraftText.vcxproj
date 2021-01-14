@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FightLogger.cpp" />
     <ClCompile Include="Fight\Fight.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="InventorySlot.cpp" />
@@ -150,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="Crafting.h" />
     <ClInclude Include="decision.h" />
+    <ClInclude Include="FightLogger.h" />
     <ClInclude Include="Fight\Fight.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="InventorySlot.h" />

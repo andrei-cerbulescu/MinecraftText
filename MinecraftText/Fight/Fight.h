@@ -3,7 +3,9 @@
 #include "../Mobs.h"
 #include <iostream>
 #include <vector>
+#include <string>
 #include "../Player.h"
+#include "../FightLogger.h"
 
 static std::vector<Mobs*> mobTypesList;
 
@@ -34,7 +36,7 @@ public:
 		for (unsigned int i = 0; i < this->fightMobsVector.size(); i++) {
 
 			std::cout << i + 1 << "." << this->fightMobsVector.at(i)->getName() << " has " << this->fightMobsVector.at(i)->getHealth() << "HP\n";
-
+			
 		}
 	}
 
@@ -52,7 +54,8 @@ public:
 
 	void awaitPlayerInput() {
 
-		std::cout << "1.Hit\n2.Eat\n3.Run\n";
+
+		std::cout << "1.Hit\n2.Eat\n3.Run\n4.Print all combat log\n";
 		int decission;
 		std::cin >> decission;
 
@@ -73,6 +76,16 @@ public:
 
 			case 3:
 				this->runFunction();
+				break;
+
+			case 4:
+				std::cout << "\n";
+				for (int i = 0; i < FightLogger::getInstance()->getLog().size(); i++) {
+
+					std::cout << FightLogger::getInstance()->getLog().at(i) << "\n";
+
+				}
+				std::cout << "\n";
 				break;
 
 			default:
@@ -111,6 +124,7 @@ public:
 
 		}
 
+		FightLogger::getInstance()->addLogEntry("You've hit a " + this->fightMobsVector.at(numberOfMob - 1)->getName() + " for " + std::to_string(this->fightPlayer->getDamage()) + " damage!");
 		this->fightMobsVector.at(numberOfMob - 1)->takeDamage(this->fightPlayer->getDamage());
 		if (this->fightMobsVector.at(numberOfMob - 1)->getHealth() <= 0) {
 			delete this->fightMobsVector.at(numberOfMob - 1);
