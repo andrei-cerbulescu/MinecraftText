@@ -8,11 +8,12 @@
 
 void mineFunction(Player* player1) {
 
-	int stoneMined, ironMined, woodFound;
+	int stoneMined, ironMined, woodFound, applesFound;
 
 	stoneMined = rand() % 32 + 1;
 	ironMined = rand() % 8 + 1;
 	woodFound = rand() % 6 + 1;
+	applesFound = rand() % 3 + 1;
 
 	InventorySlot *curentSlot = player1->inventorySpace->getFirstEmptySlot();
 
@@ -36,5 +37,12 @@ void mineFunction(Player* player1) {
 	tempWood->addQuantity(woodFound);
 
 	player1->inventorySpace->addItemsToExisting(tempWood);
+
+	InventorySlot* tempApple = new InventorySlot();
+	tempApple->emptyQuantity();
+	tempApple->setItemType(new Apple());
+	tempApple->addQuantity(applesFound);
+
+	player1->inventorySpace->addItemsToExisting(tempApple);
 
 }

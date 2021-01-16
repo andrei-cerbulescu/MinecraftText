@@ -7,6 +7,7 @@ class Item {
 
 protected:
 	int stackSize;
+	int bonusDamage;
 	bool isBreakable;
 	int durability;
 	bool isEdible;
@@ -28,12 +29,24 @@ public:
 
 	}
 
+	int getSaturation() {
+		return this->saturation;
+	}
+
+	int getBonusDamage() {
+		return bonusDamage;
+	}
+
 	std::string getItemName(){
 		return(this->name);
 	}
 
 	int getStackSize() {
 		return(this->stackSize);
+	}
+
+	bool getIsEdible() {
+		return(this->isEdible);
 	}
 
 };
@@ -79,4 +92,11 @@ private:
 
 public:
 	Wood();
+};
+
+class Apple : public Item {
+private:
+
+public:
+	Apple();
 };

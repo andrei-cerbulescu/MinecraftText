@@ -1,8 +1,10 @@
+#pragma once
 #include <iostream>
 #include "./Player.h"
 #include "./mine.h"
 #include "./Crafting.h"
 #include "Fight/Fight.h"
+#include "./Eat.h"
 #include <cstdlib>
 
 void decisionFunction(Player *player1) {
@@ -12,7 +14,7 @@ void decisionFunction(Player *player1) {
 
 	while (stillPlaying == true) {
 
-		std::cout << "1.Mine \n2.Fight Mobs \n3.Craft \n4.See Inventory\n9.Exit\n";
+		std::cout << "1.Gather Resources \n2.Fight Mobs \n3.Craft \n4.Eat\n5.See Inventory\n6.See HP\n9.Exit\n";
 
 		int decision;
 		std::cin >> decision;
@@ -34,7 +36,15 @@ void decisionFunction(Player *player1) {
 				break;
 
 			case 4:
+				eatFunction(player1);
+				break;
+
+			case 5:
 				player1->inventorySpace->displayInventory();
+				break;
+
+			case 6:
+				std::cout << "You currently have "<<player1->getHP()<<" HP\n";
 				break;
 
 			case 9:
@@ -57,6 +67,9 @@ void decisionFunction(Player *player1) {
 
 			std::cout << "\n";
 		}
+
+		player1->updateModifiers();
+
 	}
 
 }

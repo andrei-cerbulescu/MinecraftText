@@ -24,6 +24,14 @@ public:
 		return(this->curentItem);
 	}
 
+	int getSaturation() {
+		return(this->curentItem->getSaturation());
+	}
+
+	bool isEdible() {
+		return this->curentItem->getIsEdible();
+	}
+
 	bool isEmpty() {
 		if (this->quantity == 0) return(true);
 		return(false);

@@ -1,6 +1,8 @@
 #pragma once
 #include "Inventory.h"
-#include<iostream>
+#include "InventorySlot.h"
+#include <string>
+#include <iostream>
 #include <vector>
 
 class Player
@@ -14,6 +16,10 @@ public:
 	Inventory *inventorySpace;
 
 	Player();
+
+	void healPlayer(int toBeAdded) {
+		this->hp += toBeAdded;
+	}
 
 	int getHP() {
 		return(this->hp);
@@ -35,6 +41,24 @@ public:
 
 	void takeDamage(int damage) {
 		this->hp = this->hp - damage;
+	}
+
+	void updateModifiers() {
+
+		int maxModifier = 0;
+
+		for (int i = 0; i < this->inventorySpace->getInventory().size(); i++) {
+			if (this->inventorySpace->getInventory().at(i)->getItemName().find("Sword") != std::string::npos) {
+				
+				if (this->inventorySpace->getInventory().at(i)->getCurentItem()->getBonusDamage() > maxModifier) {
+					maxModifier = this->inventorySpace->getInventory().at(i)->getCurentItem()->getBonusDamage();
+				}
+
+			}
+		}
+
+		this->damageModifier = maxModifier;
+
 	}
 };
 

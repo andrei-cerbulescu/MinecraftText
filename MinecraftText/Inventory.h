@@ -19,6 +19,10 @@ public:
 		return(this->inventorySize);
 	}
 
+	std::vector<InventorySlot*> getInventory() {
+		return this->inventorySpace;
+	}
+
 	bool isFull() {
 
 		for (int i = 0; i < this->inventorySize; i++) {

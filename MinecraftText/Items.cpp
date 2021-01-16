@@ -8,6 +8,7 @@ Item::Item() {
 	this->durability = -1;
 	this->isEdible = false;
 	this->saturation = 0;
+	this->bonusDamage = 0;
 
 }
 
@@ -29,6 +30,7 @@ Sword::Sword() {
 	this->name = "Sword";
 	this->isBreakable = true;
 	this->durability = 128;
+	this->bonusDamage = 6;
 
 }
 
@@ -42,4 +44,13 @@ Iron::Iron() {
 Wood::Wood() {
 	this->stackSize = 64;
 	this->name = "Wood";
+}
+
+Apple::Apple() {
+
+	this->isEdible = true;
+	this->saturation = 6;
+	this->name = "Apple";
+	this->stackSize = 64;
+
 }

@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "../Player.h"
 #include "../FightLogger.h"
 
 static std::vector<Mobs*> mobTypesList;
@@ -55,7 +54,7 @@ public:
 	void awaitPlayerInput() {
 
 
-		std::cout << "1.Hit\n2.Eat\n3.Run\n4.Print all combat log\n";
+		std::cout << "1.Hit\n2.Run\n3.Print all combat log\n";
 
 		
 		int printedHearts = fightPlayer->getHP() / 2;
@@ -88,14 +87,10 @@ public:
 				break;
 
 			case 2:
-				this->eatFunction();
-				break;
-
-			case 3:
 				this->runFunction();
 				break;
 
-			case 4:
+			case 3:
 				std::cout << "\n";
 				for (int i = 0; i < FightLogger::getInstance()->getLog().size(); i++) {
 
@@ -163,10 +158,6 @@ public:
 			delete this->fightMobsVector.at(numberOfMob - 1);
 			this->fightMobsVector.erase(this->fightMobsVector.begin() + numberOfMob - 1);
 		}
-
-	}
-
-	void eatFunction() {
 
 	}
 
