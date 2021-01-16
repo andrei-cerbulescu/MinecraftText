@@ -15,6 +15,10 @@ public:
 
 	Player();
 
+	int getHP() {
+		return(this->hp);
+	}
+
 	bool isDead() {
 		if (this->hp <= 0) return(true);
 		return(false);

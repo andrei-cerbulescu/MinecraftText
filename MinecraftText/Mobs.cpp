@@ -21,7 +21,7 @@ Mobs::Mobs(const Mobs& toBeCopied) {
 Zombie::Zombie() {
 
 	this->hp = 20;
-	this->damage = 4;
+	this->damage = 1;
 	this->name = "Zombie";
 
 }

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "../Player.h"
 #include "../Mobs.h"
 #include <iostream>
@@ -56,6 +56,23 @@ public:
 
 
 		std::cout << "1.Hit\n2.Eat\n3.Run\n4.Print all combat log\n";
+
+		
+		int printedHearts = fightPlayer->getHP() / 2;
+
+		bool hasHalfHeart = fightPlayer->getHP() % 2;
+
+		for (int i = 0; i < printedHearts; i++) {
+
+			std::cout << "<3 ";
+		}
+
+		if (hasHalfHeart) {
+			std::cout << "<";
+		}
+
+		std::cout << "\n";
+
 		int decission;
 		std::cin >> decission;
 
@@ -93,6 +110,8 @@ public:
 				break;
 
 			}
+
+			
 		}
 			
 		catch (int excep) {
@@ -101,7 +120,21 @@ public:
 
 		}
 
+		getAttacked();
+
 		}
+
+	void getAttacked() {
+	
+		for (int i = 0; i < fightMobsVector.size(); i++) {
+
+			fightPlayer->takeDamage(fightMobsVector.at(i)->getDamage());
+
+			FightLogger::getInstance()->addLogEntry("A " + fightMobsVector.at(i)->getName() + " hit you for " + std::to_string(fightMobsVector.at(i)->getDamage())+" damage!");
+
+		}
+
+	}
 
 	void hitFunction() {
 

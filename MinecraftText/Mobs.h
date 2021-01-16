@@ -20,6 +20,10 @@ public:
 
 	}
 
+	int getDamage() {
+		return this->damage;
+	}
+
 	Mobs& operator=(const Mobs& mob) {
 
 		hp = mob.hp;
